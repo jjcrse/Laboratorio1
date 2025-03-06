@@ -32,7 +32,8 @@ console.log (R2)
 
 //Los array son como los grupitos donde estan los numeros y La funcion const los une a ambos grupitos
 
-const array1 = [1, 2, 3]; const array2 = [3, 4, 5];
+const array1 = [1, 2, 3]; 
+const array2 = [3, 4, 5];
 
 const R3 = _.union(array1,array2)
 
@@ -75,7 +76,7 @@ const personas = [
     { nombre: "Juan", edad: 30 }
     ];
     
-const R6 = _.orderBy(personas) 
+const R6 = _.orderBy(personas, ["edad"]) 
 
 console.log (R6)
 
@@ -111,7 +112,7 @@ console.log (R8)
 //Ese map keys cambia las clave para una funsion de transformacion 
 //ese to upper case las cambia a mayuscula
 const personas2 = { nombre: "Carlos", apellido: "Pérez", edad: 28 };
-const R9 = _.mapKeys(personas2,(valor, clave) => clave.toUpperCase());
+const R9 = _.mapKeys(personas2,(valor, clave) => clave.toUpperCase(clave));
 console.log (R9)
 
 //Ejercicio 10
@@ -120,13 +121,14 @@ console.log (R9)
 
 
 //Lo fui como aplanando por "Capas" para que quede todo junto en un solo corchete osea el orden fue R10A,R10B,R10C osea le fui como quitando los parentesis o corchetes
+
+//al principio habia echo con 3 flatten pero despues me di cuenta del flattenDeep que ya me los pone todo en una linea
 const anidado = [1, [2, [3, [4, 5]]], 6];
 
-const R10A = _.flatten(anidado)
-const R10B = _.flatten(R10A)
-const R10C = _.flatten(R10B)
+const R10 = _.flattenDeep(anidado)
 
-console.log (R10C)
+
+console.log (R10)
 
 //Ejercicio 11
 //^Encontrar la Intersección de Múltiples Arreglos: Dado varios arreglos, encuentra los elementos comunes entre todos ellos.
